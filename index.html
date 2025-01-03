@@ -13,12 +13,8 @@
       crossorigin="anonymous"
     ></script>
     <title>MY PAGE</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/experince.css" />
-    <link rel="manifest" href="/site.webmanifest" />
     <style>
       body,
       html {
@@ -27,6 +23,7 @@
         height: 100%;
         overflow: hidden;
       }
+
       .video-bg {
         position: absolute;
         top: 0;
@@ -36,16 +33,31 @@
         object-fit: cover;
         z-index: -1;
       }
+
       .content {
         position: relative;
         z-index: 1;
       }
+
+      /* Убедитесь, что видео адаптируется под высоту экрана на мобильных устройствах */
+      @media (max-width: 768px) {
+        .video-bg {
+          height: auto;
+          min-height: 100%;
+        }
+      }
     </style>
-    
   </head>
   <body>
     <!-- Video Background -->
-    <video class="video-bg" autoplay muted loop>
+    <video
+      class="video-bg"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
       <source src="video/background-vid.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
@@ -102,10 +114,6 @@
             >
               My TG
             </a>
-            <div>
-              <footer>
-                <p>&copy; 2024 TIMUR's веб-сайт Все права защищены.</p>
-              </footer></div>
           </div>
         </div>
       </div>
